@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JobreferenceModelStoreContainer" CdmEntityContainer="JobreferenceEntities2">
+    <EntitySetMapping Name="jobdescriptions">
+      <EntityTypeMapping TypeName="JobreferenceModel.jobdescription">
+        <MappingFragment StoreEntitySet="jobdescription">
+          <ScalarProperty Name="jobid" ColumnName="jobid" />
+          <ScalarProperty Name="jobdescription1" ColumnName="jobdescription" />
+          <ScalarProperty Name="requiredexp" ColumnName="requiredexp" />
+          <ScalarProperty Name="noticeperiod" ColumnName="noticeperiod" />
+          <ScalarProperty Name="primaryskills" ColumnName="primaryskills" />
+          <ScalarProperty Name="additional_skills" ColumnName="additional skills" />
+          <ScalarProperty Name="joblocation" ColumnName="joblocation" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="referenceregs">
+      <EntityTypeMapping TypeName="JobreferenceModel.referencereg">
+        <MappingFragment StoreEntitySet="referencereg">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="referredjobs">
+      <EntityTypeMapping TypeName="JobreferenceModel.referredjob">
+        <MappingFragment StoreEntitySet="referredjob">
+          <ScalarProperty Name="jobrefernceid" ColumnName="jobrefernceid" />
+          <ScalarProperty Name="referredto" ColumnName="referredto" />
+          <ScalarProperty Name="jobid" ColumnName="jobid" />
+          <ScalarProperty Name="referredon" ColumnName="referredon" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="skills">
+      <EntityTypeMapping TypeName="JobreferenceModel.skill">
+        <MappingFragment StoreEntitySet="skill">
+          <ScalarProperty Name="skillid" ColumnName="skillid" />
+          <ScalarProperty Name="skillname" ColumnName="skillname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

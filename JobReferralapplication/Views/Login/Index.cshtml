@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id=" outerDiv" class=" container-fluid">
+    <div id=" innerdiv" class="row">
+        <div id=" leftdiv" class="col-8">
+            <img src="https://img.freepik.com/free-vector/abstract-geometric-shape-connection-with-3d-cubes-background_42705-105.jpg?size=626&ext=jpg" style="width:162%" height="400">
+        </div>
+        <div id=" Rightdiv" class=" col-4">
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                <label for="email">Email</label>
+            </div>
+
+            <div class="form-floating mt-3 mb-3">
+                <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                <label for="pwd">Password</label>
+            </div>
+            <div class="form-check mb-3">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary" value="Login" onclick="location.href='@Url.Action("Login1", "Login1")'">Submit</button>
+        </div>
+    </div>
+</div>
+

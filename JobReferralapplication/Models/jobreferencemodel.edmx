@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="JobreferenceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="jobdescription">
+          <Key>
+            <PropertyRef Name="jobid" />
+          </Key>
+          <Property Name="jobid" Type="int" Nullable="false" />
+          <Property Name="jobdescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="requiredexp" Type="int" />
+          <Property Name="noticeperiod" Type="int" Nullable="false" />
+          <Property Name="primaryskills" Type="int" Nullable="false" />
+          <Property Name="additional skills" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="joblocation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="salary" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="referencereg">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="password" Type="text" Nullable="false" />
+          <Property Name="mobile" Type="bigint" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="address" Type="varchar" MaxLength="150" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="country" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="referredjob">
+          <Key>
+            <PropertyRef Name="jobrefernceid" />
+          </Key>
+          <Property Name="jobrefernceid" Type="int" Nullable="false" />
+          <Property Name="referredto" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="jobid" Type="int" Nullable="false" />
+          <Property Name="referredon" Type="datetime" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="comments" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="skill">
+          <Key>
+            <PropertyRef Name="skillid" />
+          </Key>
+          <Property Name="skillid" Type="int" Nullable="false" />
+          <Property Name="skillname" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="JobreferenceModelStoreContainer">
+          <EntitySet Name="jobdescription" EntityType="Self.jobdescription" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="referencereg" EntityType="Self.referencereg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="referredjob" EntityType="Self.referredjob" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="skill" EntityType="Self.skill" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JobreferenceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="jobdescription">
+          <Key>
+            <PropertyRef Name="jobid" />
+          </Key>
+          <Property Name="jobid" Type="Int32" Nullable="false" />
+          <Property Name="jobdescription1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="requiredexp" Type="Int32" />
+          <Property Name="noticeperiod" Type="Int32" Nullable="false" />
+          <Property Name="primaryskills" Type="Int32" Nullable="false" />
+          <Property Name="additional_skills" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="joblocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="salary" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="referencereg">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobile" Type="Int64" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="referredjob">
+          <Key>
+            <PropertyRef Name="jobrefernceid" />
+          </Key>
+          <Property Name="jobrefernceid" Type="Int32" Nullable="false" />
+          <Property Name="referredto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="jobid" Type="Int32" Nullable="false" />
+          <Property Name="referredon" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="comments" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="skill">
+          <Key>
+            <PropertyRef Name="skillid" />
+          </Key>
+          <Property Name="skillid" Type="Int32" Nullable="false" />
+          <Property Name="skillname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="JobreferenceEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="jobdescriptions" EntityType="Self.jobdescription" />
+          <EntitySet Name="referenceregs" EntityType="Self.referencereg" />
+          <EntitySet Name="referredjobs" EntityType="Self.referredjob" />
+          <EntitySet Name="skills" EntityType="Self.skill" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JobreferenceModelStoreContainer" CdmEntityContainer="JobreferenceEntities2">
+          <EntitySetMapping Name="jobdescriptions">
+            <EntityTypeMapping TypeName="JobreferenceModel.jobdescription">
+              <MappingFragment StoreEntitySet="jobdescription">
+                <ScalarProperty Name="jobid" ColumnName="jobid" />
+                <ScalarProperty Name="jobdescription1" ColumnName="jobdescription" />
+                <ScalarProperty Name="requiredexp" ColumnName="requiredexp" />
+                <ScalarProperty Name="noticeperiod" ColumnName="noticeperiod" />
+                <ScalarProperty Name="primaryskills" ColumnName="primaryskills" />
+                <ScalarProperty Name="additional_skills" ColumnName="additional skills" />
+                <ScalarProperty Name="joblocation" ColumnName="joblocation" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="referenceregs">
+            <EntityTypeMapping TypeName="JobreferenceModel.referencereg">
+              <MappingFragment StoreEntitySet="referencereg">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="country" ColumnName="country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="referredjobs">
+            <EntityTypeMapping TypeName="JobreferenceModel.referredjob">
+              <MappingFragment StoreEntitySet="referredjob">
+                <ScalarProperty Name="jobrefernceid" ColumnName="jobrefernceid" />
+                <ScalarProperty Name="referredto" ColumnName="referredto" />
+                <ScalarProperty Name="jobid" ColumnName="jobid" />
+                <ScalarProperty Name="referredon" ColumnName="referredon" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="skills">
+            <EntityTypeMapping TypeName="JobreferenceModel.skill">
+              <MappingFragment StoreEntitySet="skill">
+                <ScalarProperty Name="skillid" ColumnName="skillid" />
+                <ScalarProperty Name="skillname" ColumnName="skillname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

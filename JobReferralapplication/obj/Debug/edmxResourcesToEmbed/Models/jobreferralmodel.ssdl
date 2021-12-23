@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JobreferenceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="jobdescription">
+    <Key>
+      <PropertyRef Name="jobid" />
+    </Key>
+    <Property Name="jobid" Type="int" Nullable="false" />
+    <Property Name="jobdescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="requiredexp" Type="int" />
+    <Property Name="noticeperiod" Type="int" Nullable="false" />
+    <Property Name="primaryskills" Type="int" Nullable="false" />
+    <Property Name="additional skills" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="joblocation" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="salary" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="referencereg">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="mobile" Type="bigint" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="250" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="country" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="referredjobs">
+    <Key>
+      <PropertyRef Name="jobrefernceid" />
+    </Key>
+    <Property Name="jobrefernceid" Type="int" Nullable="false" />
+    <Property Name="referredto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="jobid" Type="int" Nullable="false" />
+    <Property Name="referredon" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="comments" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="skills">
+    <Key>
+      <PropertyRef Name="skillid" />
+    </Key>
+    <Property Name="skillid" Type="int" Nullable="false" />
+    <Property Name="skillname" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="JobreferenceModelStoreContainer">
+    <EntitySet Name="jobdescription" EntityType="Self.jobdescription" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="referencereg" EntityType="Self.referencereg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="referredjobs" EntityType="Self.referredjobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="skills" EntityType="Self.skills" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JobreferenceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="jobdescription">
+    <Key>
+      <PropertyRef Name="jobid" />
+    </Key>
+    <Property Name="jobid" Type="Int32" Nullable="false" />
+    <Property Name="jobdescription1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="requiredexp" Type="Int32" />
+    <Property Name="noticeperiod" Type="Int32" Nullable="false" />
+    <Property Name="primaryskills" Type="Int32" Nullable="false" />
+    <Property Name="additional_skills" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="joblocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="salary" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="referencereg">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mobile" Type="Int64" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="referredjob">
+    <Key>
+      <PropertyRef Name="jobrefernceid" />
+    </Key>
+    <Property Name="jobrefernceid" Type="Int32" Nullable="false" />
+    <Property Name="referredto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="jobid" Type="Int32" Nullable="false" />
+    <Property Name="referredon" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="comments" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="skill">
+    <Key>
+      <PropertyRef Name="skillid" />
+    </Key>
+    <Property Name="skillid" Type="Int32" Nullable="false" />
+    <Property Name="skillname" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="JobreferenceEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="jobdescriptions" EntityType="Self.jobdescription" />
+    <EntitySet Name="referenceregs" EntityType="Self.referencereg" />
+    <EntitySet Name="referredjobs" EntityType="Self.referredjob" />
+    <EntitySet Name="skills" EntityType="Self.skill" />
+  </EntityContainer>
+</Schema>

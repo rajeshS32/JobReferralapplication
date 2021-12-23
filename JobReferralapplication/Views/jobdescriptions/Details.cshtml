@@ -1,0 +1,74 @@
+﻿@model JobReferralapplication.Models.jobdescription
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color:crimson">Details</h2>
+
+<div style="color:white">
+    <h4 style="color:floralwhite">jobdescription</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.jobdescription1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobdescription1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.requiredexp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.requiredexp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.noticeperiod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.noticeperiod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.primaryskills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.primaryskills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.additional_skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.additional_skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.joblocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.joblocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.jobid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

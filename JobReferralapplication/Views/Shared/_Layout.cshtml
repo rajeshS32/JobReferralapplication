@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Welcome to Job referral program</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-image: url('../../Images/photo-1530305408560-82d13781b33a.jfif');">
+
+    <nav class=" navbar= py-0">
+        <nav class="navbar navbar-expand-sm navbar-light bg-warning fixed-top">
+            <div class="container-fluid">
+                <ul class=" nav navbar-nav nav ms-auto">
+                    <li class="nav-item">
+                    <a class="nav-link " href="~/jobdescriptions/index">Job Description</a>  
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/referredjobs/Index">Referred Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/referenceregs/Index">Reference Registration</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </nav>
+
+    @RenderBody()
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: left;
+        }
+    </style>
+    <div class="footer">
+        <p>&copy; @DateTime.Now.Year - Developed by dreamztepz</p>
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/scripts")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

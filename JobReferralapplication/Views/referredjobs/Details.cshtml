@@ -1,0 +1,58 @@
+﻿@model JobReferralapplication.Models.referredjob
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color:crimson">Details</h2>
+
+<div style="color:white">
+    <h4 style="color:floralwhite">referredjob</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.referredto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.referredto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.referredon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.referredon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.jobrefernceid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

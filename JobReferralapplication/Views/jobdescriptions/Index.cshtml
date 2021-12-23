@@ -1,0 +1,70 @@
+﻿@model IEnumerable<JobReferralapplication.Models.jobdescription>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="color:white; padding-top:50px; padding-left:20px">
+    <p>
+        @Html.ActionLink("Create New", "Create", "", new { style = "color:crimson ;padding:10px;" })
+    </p>
+    <table class="table" style="color:white">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.jobdescription1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.requiredexp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.noticeperiod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.primaryskills)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.additional_skills)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.joblocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.salary)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.jobdescription1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.requiredexp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.noticeperiod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.primaryskills)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.additional_skills)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.joblocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.salary)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.jobid }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.jobid }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.jobid })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
